@@ -1,0 +1,10 @@
+<div class="label <?= $block->getType() ?>"
+    <?php if ($styles = $block->getStyles()):
+        $_styles = '';
+        foreach ($styles as $prop => $value):
+            $_styles.= sprintf('%s:%s', $prop, $value) . ';';
+        endforeach;
+        echo sprintf('style="%s"', $_styles);
+    endif; ?>>
+    <span><?= $block->getText() ?></span>
+</div>

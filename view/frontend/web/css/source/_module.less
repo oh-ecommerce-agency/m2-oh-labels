@@ -1,0 +1,83 @@
+@color-white: #FFFFFF;
+
+& when (@media-common = true) {
+  .product-item-info,
+  #shopping-cart-table .col.item,
+  #product-comparison .cell.product,
+  .product.media {
+    position: relative;
+
+    .oh-label-wrapper {
+      position: absolute;
+      left: 0;
+      top: 3px;
+      width: 100%;
+      height: fit-content;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .label {
+        color: @color-white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+
+        &.product {
+          span {
+            font-size: 10px;
+            letter-spacing: normal;
+          }
+        }
+
+        span {
+          font-size: 14px;
+          line-height: 16px;
+          display: inline-block;
+          text-align: center;
+          text-transform: uppercase;
+          font-weight: bold;
+          letter-spacing: 1px;
+          word-wrap: break-word;
+          word-break: break-word;
+        }
+      }
+    }
+  }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m){
+  .product-item-info,
+  #shopping-cart-table .col.item,
+  #product-comparison .cell.product,
+  .product.media {
+    .oh-label-wrapper {
+      .label {
+        width: 45px;
+        height: 45px;
+
+        &.product {
+          span {
+            font-size: 9px;
+          }
+        }
+
+        span {
+          font-size: 11px;
+          line-height: 12px;
+        }
+      }
+    }
+  }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = (@screen__m + 1)) {
+  .oh-label-wrapper {
+    .label {
+      width: 60px;
+      height: 60px;
+    }
+  }
+}

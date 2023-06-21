@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+
+    <system>
+        <section id="oh_labels" translate="label" sortOrder="120"
+                 showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Labels</label>
+            <tab>oh_core</tab>
+            <resource>OH_Labels::settings</resource>
+            <group id="settings" translate="label"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Settings</label>
+                <group id="global" translate="label"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Global</label>
+                    <field id="enabled" translate="label comment" type="select"
+                           showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Enable labels</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="max_allowed" translate="label comment" type="text"
+                           showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Max allowed labels at same time</label>
+                        <tooltip>More than 2 can break the frontend layout</tooltip>
+                    </field>
+                </group>
+                <group id="news" translate="label"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>New products</label>
+                    <field id="enabled" translate="label comment" type="select"
+                           showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Enabled</label>
+                        <tooltip>Should have "Set Product as New From" attribute</tooltip>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="text" translate="label comment" type="text"
+                           showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Text</label>
+                    </field>
+                    <field id="sort_order" translate="label comment" type="text"
+                           showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Sort order</label>
+                        <tooltip>Use to sort when there is more than 1 label</tooltip>
+                    </field>
+                    <field id="background_color" translate="label comment" type="text"
+                           showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Background color</label>
+                        <frontend_model>OH\Core\Block\Adminhtml\System\Config\Colorpicker</frontend_model>
+                    </field>
+                    <field id="text_color" translate="label comment" type="text"
+                           showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Text color</label>
+                        <frontend_model>OH\Core\Block\Adminhtml\System\Config\Colorpicker</frontend_model>
+                    </field>
+                </group>
+                <group id="sale" translate="label"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sale products</label>
+                    <field id="enabled" translate="label comment" type="select"
+                           showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Enabled</label>
+                        <tooltip>Should have special price and valid "Special price to" date</tooltip>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="text" translate="label comment" type="text"
+                           showInDefault="1" showInWebsite="1" showInStore="1">
+                        <tooltip>%s will be replaced by discount percentage</tooltip>
+                        <label>Text</label>
+                    </field>
+                    <field id="sort_order" translate="label comment" type="text"
+                           showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Sort order</label>
+                        <tooltip>Use to sort when there is more than 1 label</tooltip>
+                    </field>
+                    <field id="background_color" translate="label comment" type="text"
+                           showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Background color</label>
+                        <frontend_model>OH\Core\Block\Adminhtml\System\Config\Colorpicker</frontend_model>
+                    </field>
+                    <field id="text_color" translate="label comment" type="text"
+                           showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Text color</label>
+                        <frontend_model>OH\Core\Block\Adminhtml\System\Config\Colorpicker</frontend_model>
+                    </field>
+                </group>
+                <group id="product" translate="label"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product label</label>
+                    <field id="enabled" translate="label comment" type="select"
+                           showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Enabled</label>
+                        <tooltip>Added via product from "Label text" attribute</tooltip>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="sort_order" translate="label comment" type="text"
+                           showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Sort order</label>
+                        <tooltip>Use to sort when there is more than 1 label</tooltip>
+                    </field>
+                    <field id="background_color" translate="label comment" type="text"
+                           showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Background color</label>
+                        <frontend_model>OH\Core\Block\Adminhtml\System\Config\Colorpicker</frontend_model>
+                    </field>
+                    <field id="text_color" translate="label comment" type="text"
+                           showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Text color</label>
+                        <frontend_model>OH\Core\Block\Adminhtml\System\Config\Colorpicker</frontend_model>
+                    </field>
+                </group>
+            </group>
+        </section>
+    </system>
+</config>

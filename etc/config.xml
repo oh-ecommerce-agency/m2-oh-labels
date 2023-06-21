@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <oh_labels>
+            <settings>
+                <global>
+                    <enabled>1</enabled>
+                    <max_allowed>2</max_allowed>
+                </global>
+                <sale>
+                    <enabled>1</enabled>
+                    <text>%s%% Off</text>
+                    <sort_order>1</sort_order>
+                    <background_color>#EA3358</background_color>
+                    <text_color>#FFFFFF</text_color>
+                </sale>
+                <news>
+                    <enabled>1</enabled>
+                    <text>New</text>
+                    <sort_order>2</sort_order>
+                    <background_color>#0D0D00</background_color>
+                    <text_color>#FFFFFF</text_color>
+                </news>
+                <product>
+                    <enabled>1</enabled>
+                    <sort_order>3</sort_order>
+                    <background_color>#4aad6e</background_color>
+                    <text_color>#0D0D00</text_color>
+                </product>
+            </settings>
+        </oh_labels>
+    </default>
+</config>

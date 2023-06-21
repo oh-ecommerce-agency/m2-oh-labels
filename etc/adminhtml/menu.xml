@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="OH_Labels::title"
+             title="Labels"
+             module="OH_Labels"
+             sortOrder="30"
+             parent="OH_Core::oh"
+             translate="title"
+             resource="OH_Labels::setting"
+        />
+
+        <add id="OH_Labels::settings"
+             title="Settings"
+             module="OH_Labels"
+             sortOrder="10"
+             translate="title"
+             parent="OH_Labels::title"
+             resource="OH_Labels::setting"
+             action="adminhtml/system_config/edit/section/oh_labels"
+        />
+    </menu>
+</config>
