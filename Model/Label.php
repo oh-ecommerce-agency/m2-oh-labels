@@ -163,9 +163,13 @@ class Label
 
     private function getDiscountPercentage($origPrice, $newPrice)
     {
-        $discount = $origPrice - $newPrice;
-        $percentage = ($discount / $origPrice) * 100;
-        return number_format($percentage, 0, null, '');
+        if ($origPrice > 0 && $newPrice > 0) {
+            $discount = $origPrice - $newPrice;
+            $percentage = ($discount / $origPrice) * 100;
+            return number_format($percentage, 0, null, '');
+        }
+
+        return 0;
     }
 
     private function isDateValid($toDate)
