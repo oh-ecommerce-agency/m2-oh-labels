@@ -127,9 +127,25 @@ class Label
 
     private function getDiscountLabel($product)
     {
-        if (!$product->getSpecialPrice() ||
-            !$this->isDateValid($product->getSpecialToDate()) ||
-            !$this->configProvider->getValue('sale', 'enabled')) {
+        if (!$this->configProvider->getValue('sale', 'enabled')) {
+            return [];
+        }
+
+        //If is configurable product, check if exists at least one child with special price
+        if ($product->getTypeId() == 'configurable') {
+            $children = $product->getTypeInstance()->getUsedProducts($product);
+
+            foreach ($children as $child) {
+                $child = $this->getProduct($child->getEntityId());
+
+                if ($child->getSpecialPrice() && $this->isDateValid($child->getSpecialToDate())) {
+                    $product = $child;
+                    break;
+                }
+            }
+        }
+
+        if (!$product->getSpecialPrice() || !$this->isDateValid($product->getSpecialToDate())) {
             return [];
         }
 
